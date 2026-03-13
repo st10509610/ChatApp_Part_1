@@ -32,7 +32,7 @@ public class ChatApp_Part1
         }
         else
         {
-            System.out.println("Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.");
+            System.out.println("Username is not correctly formatted. Please ensure that your username contains an underscore and is no more than five characters in length.");
         }
         
         if (login.checkPasswordComplexity(password) == true)
@@ -41,7 +41,7 @@ public class ChatApp_Part1
         }
         else
         {
-            System.out.println("Password is not correctly formatted; please ensure that your password contains at least eight characters, a capital letter, a number, and a special character.");
+            System.out.println("Password is not correctly formatted. Please ensure that your password contains at least eight characters, a capital letter, a number, and a special character.");
         }
         
         if (login.checkCellPhoneNumber(cellPhoneNumber) == true)
@@ -54,6 +54,7 @@ public class ChatApp_Part1
         }
         
         System.out.println();
-        System.out.println(login.returnLogInStatus());
+        System.out.println(login.registerUser(username, password));
+        System.out.println(login.returnLogInStatus(username, password, cellPhoneNumber));
     }
 }
