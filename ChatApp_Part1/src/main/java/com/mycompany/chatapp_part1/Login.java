@@ -1,7 +1,7 @@
 package com.mycompany.chatapp_part1;
 
 public class Login
-{   
+{
     public boolean checkUserName(String username)
     {
         boolean validUsername = false;
@@ -77,26 +77,54 @@ public class Login
         return message;
     }
     
-    /*
-    private boolean logInUser()
+    private boolean logInUser(String username, String password)
     {
-    
-    }
-    */
-    
-    public String returnLogInStatus(String username, String password, String cellPhoneNumber)
-    {
-        String logInStatus;
+        boolean logInAuthorised = false;
         
-        if (checkUserName(username) == true && checkPasswordComplexity(password) == true && checkCellPhoneNumber(cellPhoneNumber) == true)
+        if (checkUserName(username) == true && checkPasswordComplexity(password) == true)
         {
-            logInStatus = "Logged in successfully.";
+            logInAuthorised = true;
+        }
+        
+        return logInAuthorised;
+    }
+    
+    public String returnLogInStatus(String username, String password)
+    {
+        String logInStatus = "";
+        String firstName = "firstName";
+        String lastName = "lastName";
+        
+        if (logInUser(username, password) == true)
+        {
+            logInStatus = "Welcome " + firstName + " " + lastName + ". It is nice to see you again.";
         }
         else
         {
-            logInStatus = "Login failed. Please check that your username, password, and cellphone number are correct.";
+            logInStatus = "Login failed. Please check that your username and password are correct.";
         }
         
         return logInStatus;
+    }
+
+    public String getUsername()
+    {
+        String username = "user";
+        
+        return username;
+    }
+    
+    public String getPassword()
+    {
+        String password = "pass";
+        
+        return password;
+    }
+    
+    public String getCellPhoneNumber()
+    {
+        String cellPhoneNumber = "011";
+        
+        return cellPhoneNumber;
     }
 }

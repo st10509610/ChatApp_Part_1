@@ -55,6 +55,7 @@ public class ChatApp_Part1
         
         System.out.println();
         System.out.println(login.registerUser(username, password));
-        System.out.println(login.returnLogInStatus(username, password, cellPhoneNumber));
+        System.out.println();
+        System.out.println(login.returnLogInStatus(username, password));
     }
 }
